@@ -1,11 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {BrowserRouter, Route, NavLink, Switch} from 'react-router-dom';
+import {BrowserRouter, Route, NavLink, Switch, Redirect} from 'react-router-dom';
 
 import Home from './components/home';
 import Posts from './components/post';
 import Profile from './components/profile';
 import PostItem from './components/post_item';
+import NotFound  from './components/404';
 
 const App =()=>(
 
@@ -26,6 +27,7 @@ const App =()=>(
   <Route path='/posts' exact component={Posts}/>
   <Route path='/profile' exact component={Profile}/>
   <Route path='/' exact component={Home}/>
+  <Route render={()=><h3>Oops page Not Found</h3>}/>
   </Switch>
   
  </BrowserRouter>
