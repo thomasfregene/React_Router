@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {BrowserRouter, Route} from 'react-router-dom';
+import {BrowserRouter, Route, Link} from 'react-router-dom';
 
 import Home from './components/home';
 import Posts from './components/post';
@@ -10,7 +10,14 @@ const App =()=>(
 
 <BrowserRouter>
  <header>
-    <div>header</div>
+    <Link to="/">Home</Link><br/>
+    <Link to="/posts">Posts</Link><br/>
+    <Link to={{
+      pathname: '/profile',
+      hash: '#francise',
+      search: '?profile=true'
+    }}>Profile</Link><br/>
+    <br/><br/>
   </header>
   <Route path='/' exact component={Home}/>
   <Route path='/posts' component={Posts}/>
