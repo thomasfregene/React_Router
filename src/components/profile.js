@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link, Redirect} from 'react-router-dom';
+import {Link } from 'react-router-dom';
 
 const Profile =(props)=>{
 
@@ -7,13 +7,6 @@ const Profile =(props)=>{
         //use also for redirects
         props.history.push('/')
 
-        // const userRedirect = true;
-
-        // if(userRedirect){
-        //     return(
-        //         <Redirect to="/"/>
-        //     )
-        // }
     }
     return(
         <>
