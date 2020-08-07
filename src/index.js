@@ -7,6 +7,7 @@ import Posts from './components/post';
 import Profile from './components/profile';
 import PostItem from './components/post_item';
 import NotFound  from './components/404';
+import Conditional from './components/conditionals';
 
 const App =()=>(
 
@@ -18,6 +19,9 @@ const App =()=>(
     <NavLink to="/posts" activeStyle={{color:'red'}}
     activeClassName="selected">Posts</NavLink><br/>
 
+    <NavLink to="/conditional" activeStyle={{color:'red'}}
+    activeClassName="selected">Conditional</NavLink><br/>
+
     <NavLink to="/profile" activeStyle={{color:'red'}}
     activeClassName="selected">Profile</NavLink><br/>
     <br/><br/>
@@ -26,6 +30,7 @@ const App =()=>(
   <Route path='/posts/:id' component={PostItem}/>
   <Route path='/posts' exact component={Posts}/>
   <Route path='/profile' exact component={Profile}/>
+  <Route path='/conditional' exact component={Conditional}/>
   <Route path='/' exact component={Home}/>
   <Route render={()=><h3>Oops page Not Found</h3>}/>
   </Switch>
