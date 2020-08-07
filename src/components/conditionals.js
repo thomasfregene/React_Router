@@ -1,29 +1,35 @@
-import React from "react";
+import React, {Component} from "react";
 
-const Conditional = () => {
-    const returnValue=()=>{
-        return true;
+class Conditional extends Component {
+    state ={
+        loading:true
+    }
+    componentDidMount(){
+        setTimeout(()=>{
+            this.setState({
+                loading: false
+            })
+        }, 1500)
     }
 
-    const showIt=()=>{
-        return(
-            returnValue()
-            ?
-          <div>
-           Hello it's true
-          </div>
-          :
-          <div>
-           Hello it's false
-          </div>
-        )
-    }
 
-  return (
-     <div>
-         {showIt()}
-     </div>
-  );
+    render(){
+        if(this.state.loading){
+            return(
+                <div>
+                    loading...
+                </div>
+            )
+        }else{
+            return(
+                <div>
+                    Hello this is the conditional component
+                </div>
+            )
+        }
+       
+    }
+    
 };
 
 export default Conditional;
