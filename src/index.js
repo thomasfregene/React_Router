@@ -8,6 +8,7 @@ import Profile from './components/profile';
 import PostItem from './components/post_item';
 import Conditional from './components/conditionals';
 import PureComp from './components/pureComp';
+import UserComp from './components/user';
 
 const App =()=>(
 
@@ -25,6 +26,9 @@ const App =()=>(
     <NavLink to="/pureComp" activeStyle={{color:'red'}}
     activeClassName="selected">Pure Comp</NavLink><br/>
 
+    <NavLink to="/userComp" activeStyle={{color:'red'}}
+    activeClassName="selected">User Comp</NavLink><br/>
+
     <NavLink to="/profile" activeStyle={{color:'red'}}
     activeClassName="selected">Profile</NavLink><br/>
     <br/><br/>
@@ -35,6 +39,7 @@ const App =()=>(
   <Route path='/profile' exact component={Profile}/>
   <Route path='/conditional' exact component={Conditional}/>
   <Route path='/pureComp' exact component={PureComp}/>
+  <Route path='/userComp' exact component={UserComp}/>
   <Route path='/' exact component={Home}/>
   <Route render={()=><h3>Oops page Not Found</h3>}/>
   </Switch>
